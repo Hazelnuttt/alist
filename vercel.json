@@ -2,31 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "/*",
-      "use": "@vercel/node"
+      "src": "main.go",
+      "use": "@vercel/go"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/",
-      "headers": {
-        "Cache-Control": "no-cache"
-      }
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
-      "source": "/assets/(.*)",
-      "destination": "/assets/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
+      "dest": "/"
     }
   ]
 }
